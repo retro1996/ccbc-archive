@@ -329,6 +329,7 @@ def handle_static(content,isurl=False):
         ensure_dir_exists(os.path.dirname(local_path))
         if(os.path.exists(local_path)):
             print("----Already downloaded.Skipping...")
+            content = content.replace(image_url, local_url)
             continue
         print(f"----Requesting url {image_url}")
 
